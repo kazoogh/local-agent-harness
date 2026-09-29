@@ -41,6 +41,6 @@ I supported employees, managed devices and accounts, solved hardware and softwar
 
 ## Project Sought
 
-For my capstone, I want to build an interactive AI harness that runs local, open-weight models and gives them controlled access to tools. The system would allow an AI model to operate desktop applications and browsers, work with files and code, run commands, search for information, and complete multi-step tasks.
+For my capstone, I am developing a local-first AI study assistant. Students should be able to capture incomplete notes, add course material, and turn their own sources into reviewable flashcards and practice questions. My focus is on verifying that generated answers are supported by the selected material and keeping students in control of what they save, accept, and practice.
 
-The harness would interpret a request, load the right context and memory, divide the work into tasks, choose the appropriate model or tool, and verify the results. A desktop interface would let the user monitor its work, approve important actions, take control, and review what happened. My goal is to create a local-first AI operating layer that can support software development, research, automation, and everyday computer work.
+This narrower project carries forward my interest in local models, tool boundaries, human approval, and result verification from the earlier general-purpose agent harness proposal. I plan to evaluate the system with source-grounding checks and student workflow studies, not just a polished interface.

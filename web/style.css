@@ -1,0 +1,30 @@
+:root { color-scheme: light; font: 16px/1.5 system-ui, sans-serif; background: #f5f6fa; color: #162238; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 850px; margin: auto; padding: 2rem 1rem 5rem; }
+header { padding: 1rem 0 1.5rem; }
+h1 { font-size: clamp(2rem, 6vw, 3rem); margin: .2rem 0; }
+h2 { margin-top: 0; }
+h3 { margin: .5rem 0; }
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; color: #425c8b; }
+.privacy { border-left: 4px solid #4467b0; padding: .5rem .8rem; background: #e8eefa; }
+section { background: white; border: 1px solid #dce1eb; border-radius: 12px; padding: 1.25rem; margin: 1rem 0; }
+form { display: grid; gap: .45rem; margin: 1rem 0 1.5rem; }
+form.inline { grid-template-columns: 1fr auto; align-items: end; }
+form.inline label { grid-column: 1 / -1; }
+input, select, textarea, button { font: inherit; }
+input, select, textarea { width: 100%; border: 1px solid #8794a9; border-radius: 6px; padding: .6rem; background: white; color: inherit; }
+textarea { resize: vertical; }
+button { width: fit-content; border: 0; border-radius: 6px; background: #274b92; color: white; padding: .6rem .9rem; cursor: pointer; }
+button:hover { background: #193972; }
+button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #df8b30; outline-offset: 2px; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+.subtle { background: #674450; }
+ul { padding-left: 1.2rem; }
+li { margin: .55rem 0; }
+li button { margin-left: .5rem; }
+article { background: #f1f4f9; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 20rem; overflow: auto; }
+#message { min-height: 1.5rem; color: #8a2c25; font-weight: 600; }
+#feedback p { margin: .5rem 0; }
+@media (max-width: 500px) { form.inline { grid-template-columns: 1fr; } form.inline label { grid-column: 1; } }

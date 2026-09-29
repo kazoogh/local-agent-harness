@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Local Study Assistant</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Senior Design prototype</p>
+      <h1>Local Study Assistant</h1>
+      <p>Capture a rough thought, attach course text, and turn supported facts into questions you can practice.</p>
+      <p class="privacy">Saved on this computer. Ollama receives selected source text only when you request a draft. Use a downloaded local model to keep inference on this computer.</p>
+    </header>
+
+    <p id="message" role="status" aria-live="polite"></p>
+
+    <section aria-labelledby="capture-heading">
+      <h2 id="capture-heading">1. Capture</h2>
+      <form id="course-form" class="inline">
+        <label for="course-name">New course</label>
+        <input id="course-name" name="name" maxlength="80" required placeholder="Biology 101">
+        <button>Add course</button>
+      </form>
+      <form id="capture-form">
+        <label for="capture-course">Course</label>
+        <select id="capture-course" name="course_id"></select>
+        <label for="capture-text">Rough note or question</label>
+        <textarea id="capture-text" name="content" rows="4" maxlength="100000" required placeholder="Write one imperfect thought now; organize it later."></textarea>
+        <button>Save capture</button>
+      </form>
+      <form id="material-form">
+        <label for="material-course">Course for material</label>
+        <select id="material-course" name="course_id"></select>
+        <label for="material-file">Text or Markdown course material</label>
+        <input id="material-file" type="file" accept=".txt,.md,text/plain,text/markdown" required>
+        <button>Add material</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="source-heading">
+      <h2 id="source-heading">2. Choose a source</h2>
+      <ul id="sources"></ul>
+      <article id="selected-source" hidden>
+        <h3 id="source-title"></h3>
+        <pre id="source-content"></pre>
+        <button id="delete-source" type="button" class="subtle">Delete source and its cards</button>
+      </article>
+    </section>
+
+    <section aria-labelledby="card-heading">
+      <h2 id="card-heading">3. Make recall cards</h2>
+      <p>Cards stay in draft until you review and accept them. Each answer must appear in an exact quote from the selected source.</p>
+      <button id="ai-draft" type="button">Draft with Ollama</button>
+      <span id="ai-status"></span>
+      <form id="card-form">
+        <label for="question">Question</label>
+        <input id="question" name="question" maxlength="300" required placeholder="What does photosynthesis convert?">
+        <label for="answer">Short answer</label>
+        <input id="answer" name="answer" maxlength="300" required placeholder="Light energy">
+        <label for="quote">Exact supporting quote</label>
+        <textarea id="quote" name="quote" rows="3" maxlength="1000" required placeholder="Copy a sentence from the source above."></textarea>
+        <button>Save draft card</button>
+      </form>
+      <ul id="drafts"></ul>
+    </section>
+
+    <section aria-labelledby="practice-heading">
+      <h2 id="practice-heading">4. Practice</h2>
+      <p id="due-count"></p>
+      <article id="practice" hidden>
+        <h3 id="practice-question"></h3>
+        <button id="reveal" type="button">Reveal answer and source</button>
+        <div id="feedback" hidden>
+          <p><strong>Answer:</strong> <span id="practice-answer"></span></p>
+          <p><strong>Source:</strong> <span id="practice-source"></span></p>
+          <p><strong>Evidence:</strong> <span id="practice-quote"></span></p>
+          <p>How well did you recall it?</p>
+          <button id="again" type="button">Try again tomorrow</button>
+          <button id="good" type="button">Recalled it</button>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
