@@ -72,9 +72,7 @@ D0 I1-I7 and D1 §§2-5 define these fields and recipients. The desktop bridge, 
 | Item ID/job/kind/question/answer/status; citation item/passage IDs, quote offsets, exact quote/location | Engine/student (I1/I3/I4) | Review and open supporting material | Study action; accept to activate | Local DB | App/OS | Deleted course; missing evidence invalidates item |
 | Covered source IDs, warnings, status, error code/message/retryable, Result ok/data | Importer/engine/store (I1-I7) | Explain coverage, failures, next steps | Associated action | Memory or job record | App/OS | Job retention unspecified |
 
-The deletion confirmation triggers a SQLite delete with foreign-key cascades to cards and reviews. No scheduled purge, whole-library reset UI, or secure erase is implemented. I haven't set a project-end cleanup policy or documented removing a field. My prototype collects no sensor readings, student accounts, or grades.
-
-**Privacy and consent (ACM §1.6).** My prototype gives the student a separate button for model drafting. In D0 I proposed background indexing after import. I haven't specified the consent prompt or whether a student can decline indexing while keeping their notes. I also haven't set a disposal procedure for managed originals, indexes, logs, or backups.
+**Privacy and retention (ACM §1.6).** My prototype asks the student to click before model drafting. D0 proposes background indexing, and I still need to define its consent prompt. Confirmed source deletion cascades to cards and reviews in SQLite. I will use synthetic demo material where possible and keep demo data through final grading. After grading, I will stop the app and manually delete the demo database, sidecar files, and project-owned copies in managed files, indexes, exports, logs, and backups. Students keep their originals and control their own libraries. My prototype collects no sensor readings, account records, or grades. I haven't documented removing a field.
 
 <!-- pagebreak -->
 
@@ -124,10 +122,10 @@ I built this inventory from the tracked imports, browser asset references, model
 | pypdf | D1 candidate; unpinned | BSD-3-Clause | Permissive | Carry notices and disclaimer. No implied endorsement. |
 | python-pptx | D1 candidate; unpinned | MIT | Permissive | Carry copyright and permission notice. |
 | Platform browser and system font | User-installed; varies | Platform terms | External runtime | Repo ships neither the runtime nor the font. Check terms before packaging either. |
-| D0/D1 drawings and PDFs; test fixtures | Tracked project files | No project license selected | First-party | Scope of a future project license is open. |
+| D0/D1 drawings and PDFs; test fixtures | Tracked project files | MIT | Permissive | Keep the copyright and permission notice with copies or substantial portions. |
 | Student notes and course files | User-provided; per upload | Rights depend on source | User content | Importing leaves existing rights intact. Keep course files out of the repo and release bundle. |
 
-**Project license and compatibility.** I haven't selected an app license or added a LICENSE file, so I can't confirm project-wide compatibility yet. I listed PyInstaller in D1 as a candidate. Its bootloader exception allows me to use it to bundle the app under terms compatible with my dependencies. I haven't chosen a final packaging tool or pinned the release dependencies and model digests.
+**Project license and compatibility.** I chose [MIT](LICENSE) for my original project code, documentation and fixtures so others can reuse and modify them. MIT is compatible with the prototype dependencies under the terms listed above. Bundled components and model weights keep their own terms. For D1 candidates, I will check the exact releases and include required notices. PyInstaller's bootloader exception permits an MIT-licensed app bundle under the applicable dependency terms.
 
 <!-- pagebreak -->
 
@@ -146,7 +144,7 @@ The repository copy of this list is in [NOTICE.md](NOTICE.md).
 
 > “Generative AI tools may be used for drafting and code assistance but not for the design decisions or written analysis that are assessed in this course.”
 
-Codex is the only AI tool I use. The table records how I used it to prepare this statement.
+Codex is the only AI tool I use. The table records how I used it to prepare this statement. I also discussed licensing and retention options with Codex and chose MIT and manual post-grading cleanup.
 
 | Tool | Used by | Task | Column | How verified |
 | --- | --- | --- | --- | --- |
