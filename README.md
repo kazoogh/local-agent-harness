@@ -32,3 +32,8 @@ Run checks with `python -m unittest discover -s tests -v`. To use a different da
 - [Professional biography](bios/Jason-Galanie.md): background and updated capstone focus.
 
 My previous local agent harness proposal remains in Git history. I am carrying its useful ideas—local processing, controlled tool use, human approval, and result verification—into this focused learning application.
+
+## 5. Ethics and attribution
+
+- [Ethics statement](Ethics_Statement.md) - senior design assignment.
+- [Third-party attribution](NOTICE.md) - upstream sources, dependencies, and asset provenance.
