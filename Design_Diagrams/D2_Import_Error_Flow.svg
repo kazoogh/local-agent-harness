@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="1000" height="820" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1000 820" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="1000" height="820"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-820)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="1000" height="820" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="20" y="790" style="font-family: Helvetica-Bold; font-size: 20px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1580) scale(1,-1)">Local Study Assistant - F2: Import and failure outcomes</text>
+			<text x="20" y="765" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1530) scale(1,-1)">Goal: Help students keep notes and make study materials on their own computer for free.</text>
+			<text x="20" y="740" style="font-family: Helvetica; font-size: 14px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1480) scale(1,-1)">Boxes = processing steps/decisions or terminal outcomes. Arrows = control flow.</text>
+			<text x="20" y="721" style="font-family: Helvetica; font-size: 14px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1442) scale(1,-1)">Arrow labels are conditions; red arrows end in explicit errors. Saved notes are independent.</text>
+			<rect x="50" y="600" width="390" height="75" rx="9" ry="9" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="60" y="651" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1302) scale(1,-1)">Trusted picker -&gt; stage file</text>
+			<text x="60" y="630" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1260) scale(1,-1)">Check type, byte cap, course/session</text>
+			<rect x="610" y="600" width="340" height="75" rx="9" ry="9" style="stroke: rgb(70%,23%,23%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(100%,94%,94%); fill-rule: evenodd;"/>
+			<text x="620" y="651" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1302) scale(1,-1)">Reject before extraction</text>
+			<text x="620" y="630" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1260) scale(1,-1)">INVALID_INPUT / FILE_TOO_LARGE</text>
+			<path d="M 440,640 L 610,640 Z" style="stroke: rgb(70%,23%,23%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<polygon points="610 640, 600 644, 600 636" style="stroke: rgb(70%,23%,23%); stroke-linecap: butt; stroke-width: 1; fill: rgb(70%,23%,23%); fill-rule: evenodd;"/>
+			<text x="505.162" y="649.0" style="font-family: Helvetica; font-size: 14px;fill: rgb(70%,23%,23%); stroke:none;" transform="translate(0,1298) scale(1,-1)">invalid</text>
+			<rect x="50" y="445" width="390" height="85" rx="9" ry="9" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="60" y="506" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1012) scale(1,-1)">Extract in bounded worker</text>
+			<text x="60" y="485" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,970) scale(1,-1)">Keep page/slide locations</text>
+			<text x="60" y="464" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,928) scale(1,-1)">Enforce time/text/expanded-byte caps</text>
+			<path d="M 245,600 L 245,530 Z" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<polygon points="245 530, 249 540, 241 540" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1; fill: rgb(9%,20%,30%); fill-rule: evenodd;"/>
+			<text x="253.0" y="574.0" style="font-family: Helvetica; font-size: 14px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1148) scale(1,-1)">valid</text>
+			<rect x="610" y="445" width="340" height="85" rx="9" ry="9" style="stroke: rgb(70%,23%,23%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(100%,94%,94%); fill-rule: evenodd;"/>
+			<text x="620" y="506" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1012) scale(1,-1)">Stop; no partial publication</text>
+			<text x="620" y="485" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,970) scale(1,-1)">PARSE_FAILED / IMPORT_LIMIT</text>
+			<text x="620" y="464" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,928) scale(1,-1)">TIMEOUT / NO_TEXT</text>
+			<path d="M 440,490 L 610,490 Z" style="stroke: rgb(70%,23%,23%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<polygon points="610 490, 600 494, 600 486" style="stroke: rgb(70%,23%,23%); stroke-linecap: butt; stroke-width: 1; fill: rgb(70%,23%,23%); fill-rule: evenodd;"/>
+			<text x="473.256" y="499.0" style="font-family: Helvetica; font-size: 14px;fill: rgb(70%,23%,23%); stroke:none;" transform="translate(0,998) scale(1,-1)">failure / zero text</text>
+			<rect x="50" y="280" width="390" height="90" rx="9" ry="9" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="60" y="346" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,692) scale(1,-1)">Publish ready source transaction</text>
+			<text x="60" y="325" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,650) scale(1,-1)">Recheck ownership / stage identity</text>
+			<text x="60" y="304" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,608) scale(1,-1)">File + DB recovery reconciles crashes</text>
+			<path d="M 245,445 L 245,370 Z" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<polygon points="245 370, 249 380, 241 380" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1; fill: rgb(9%,20%,30%); fill-rule: evenodd;"/>
+			<text x="253.0" y="416.5" style="font-family: Helvetica; font-size: 14px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,833) scale(1,-1)">readable</text>
+			<rect x="610" y="280" width="340" height="90" rx="9" ry="9" style="stroke: rgb(70%,23%,23%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(100%,94%,94%); fill-rule: evenodd;"/>
+			<text x="620" y="346" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,692) scale(1,-1)">Rollback / reconcile staging</text>
+			<text x="620" y="325" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,650) scale(1,-1)">STORAGE_ERROR / DISK_FULL</text>
+			<text x="620" y="304" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,608) scale(1,-1)">Keep independent notes</text>
+			<path d="M 440,330 L 610,330 Z" style="stroke: rgb(70%,23%,23%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<polygon points="610 330, 600 334, 600 326" style="stroke: rgb(70%,23%,23%); stroke-linecap: butt; stroke-width: 1; fill: rgb(70%,23%,23%); fill-rule: evenodd;"/>
+			<text x="483.77" y="339.0" style="font-family: Helvetica; font-size: 14px;fill: rgb(70%,23%,23%); stroke:none;" transform="translate(0,678) scale(1,-1)">failed commit</text>
+			<rect x="50" y="105" width="390" height="95" rx="9" ry="9" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="60" y="176" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,352) scale(1,-1)">Import committed; queue indexing</text>
+			<text x="60" y="155" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,310) scale(1,-1)">Saved source visible now</text>
+			<text x="60" y="134" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,268) scale(1,-1)">Search waits for index readiness</text>
+			<path d="M 245,280 L 245,200 Z" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<polygon points="245 200, 249 210, 241 210" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1; fill: rgb(9%,20%,30%); fill-rule: evenodd;"/>
+			<text x="253.0" y="249.0" style="font-family: Helvetica; font-size: 14px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,498) scale(1,-1)">success</text>
+			<rect x="610" y="105" width="340" height="95" rx="9" ry="9" style="stroke: rgb(70%,23%,23%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(100%,94%,94%); fill-rule: evenodd;"/>
+			<text x="620" y="176" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,352) scale(1,-1)">Import stays committed</text>
+			<text x="620" y="155" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,310) scale(1,-1)">MODEL_UNAVAILABLE / BUSY</text>
+			<text x="620" y="134" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,268) scale(1,-1)">Retry indexing after correction</text>
+			<path d="M 440,160 L 610,160 Z" style="stroke: rgb(70%,23%,23%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<polygon points="610 160, 600 164, 600 156" style="stroke: rgb(70%,23%,23%); stroke-linecap: butt; stroke-width: 1; fill: rgb(70%,23%,23%); fill-rule: evenodd;"/>
+			<text x="470.918" y="169.0" style="font-family: Helvetica; font-size: 14px;fill: rgb(70%,23%,23%); stroke:none;" transform="translate(0,338) scale(1,-1)">index unavailable</text>
+		</g>
+	</g>
+</svg>

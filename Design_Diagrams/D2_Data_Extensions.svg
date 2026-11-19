@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="1000" height="1040" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1000 1040" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="1000" height="1040"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-1040)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="1000" height="1040" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="20" y="1010" style="font-family: Helvetica-Bold; font-size: 20px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,2020) scale(1,-1)">Local Study Assistant - F1: D2 data extensions</text>
+			<text x="20" y="985" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1970) scale(1,-1)">Goal: Help students keep notes and make study materials on their own computer for free.</text>
+			<text x="20" y="960" style="font-family: Helvetica; font-size: 14px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1920) scale(1,-1)">Boxes = entities; solid lines = relationships. PK = primary key; FK = foreign key.</text>
+			<text x="20" y="941" style="font-family: Helvetica; font-size: 14px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1882) scale(1,-1)">End counts describe each side: 1 = exactly one; 0..1 = optional one; 0..* = zero or more.</text>
+			<text x="20" y="922" style="font-family: Helvetica; font-size: 14px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1844) scale(1,-1)">D1 entities are shown for context; details and cross-course checks are in section 2.2.</text>
+			<rect x="20" y="795" width="250" height="90" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="30" y="861" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1722) scale(1,-1)">Course (D1)</text>
+			<text x="30" y="840" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1680) scale(1,-1)">PK id</text>
+			<text x="30" y="819" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1638) scale(1,-1)">name; timeZone</text>
+			<rect x="370" y="775" width="270" height="110" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="380" y="861" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1722) scale(1,-1)">ScheduleRule</text>
+			<text x="380" y="840" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1680) scale(1,-1)">PK id; FK courseId</text>
+			<text x="380" y="819" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1638) scale(1,-1)">weekday; localStart/End</text>
+			<text x="380" y="798" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1596) scale(1,-1)">startDate/endDate; zone</text>
+			<rect x="750" y="775" width="230" height="110" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="760" y="861" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1722) scale(1,-1)">ClassSession (D1+)</text>
+			<text x="760" y="840" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1680) scale(1,-1)">PK id; FK courseId</text>
+			<text x="760" y="819" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1638) scale(1,-1)">FK ruleId (optional)</text>
+			<text x="760" y="798" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1596) scale(1,-1)">startsAt; endsAt</text>
+			<path d="M 270,835 L 370,835 Z" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<text x="290.033" y="844.0" style="font-family: Helvetica; font-size: 14px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1688) scale(1,-1)">1        0..*</text>
+			<path d="M 640,835 L 750,835 Z" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<text x="666.979" y="844.0" style="font-family: Helvetica; font-size: 14px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1688) scale(1,-1)">0..1   0..*</text>
+			<rect x="20" y="610" width="220" height="100" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="30" y="686" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1372) scale(1,-1)">Source (D1+)</text>
+			<text x="30" y="665" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1330) scale(1,-1)">PK id; FK courseId</text>
+			<text x="30" y="644" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1288) scale(1,-1)">managedFileId</text>
+			<text x="30" y="623" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1246) scale(1,-1)">storageState</text>
+			<rect x="300" y="610" width="220" height="100" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="310" y="686" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1372) scale(1,-1)">Suggestion</text>
+			<text x="310" y="665" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1330) scale(1,-1)">PK id; FK baseSourceId</text>
+			<text x="310" y="644" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1288) scale(1,-1)">FK jobId; state</text>
+			<text x="310" y="623" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1246) scale(1,-1)">acceptedSourceId</text>
+			<rect x="590" y="610" width="200" height="100" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="600" y="686" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1372) scale(1,-1)">SuggestionEvidence</text>
+			<text x="600" y="665" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1330) scale(1,-1)">PK FK suggestionId</text>
+			<text x="600" y="644" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1288) scale(1,-1)">+ FK passageId</text>
+			<text x="600" y="623" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1246) scale(1,-1)">+ quoteStart/End</text>
+			<rect x="850" y="610" width="130" height="100" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="860" y="686" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1372) scale(1,-1)">Passage (D1)</text>
+			<text x="860" y="665" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1330) scale(1,-1)">PK id</text>
+			<text x="860" y="644" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1288) scale(1,-1)">FK sourceId</text>
+			<text x="860" y="623" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1246) scale(1,-1)">text; location</text>
+			<path d="M 240,665 L 300,665 Z" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<text x="249.763" y="674.0" style="font-family: Helvetica; font-size: 14px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1348) scale(1,-1)">1   0..*</text>
+			<path d="M 520,665 L 590,665 Z" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<text x="534.763" y="674.0" style="font-family: Helvetica; font-size: 14px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1348) scale(1,-1)">1   0..*</text>
+			<path d="M 790,665 L 850,665 Z" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<text x="801.709" y="674.0" style="font-family: Helvetica; font-size: 14px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1348) scale(1,-1)">0..*  1</text>
+			<rect x="20" y="415" width="220" height="105" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="30" y="496" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,992) scale(1,-1)">StudyItem (D1)</text>
+			<text x="30" y="475" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,950) scale(1,-1)">PK id; FK jobId</text>
+			<text x="30" y="454" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,908) scale(1,-1)">status; references</text>
+			<text x="30" y="433" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,866) scale(1,-1)">accepted before use</text>
+			<rect x="330" y="480" width="280" height="80" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="340" y="536" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1072) scale(1,-1)">ReviewState</text>
+			<text x="340" y="515" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1030) scale(1,-1)">PK FK itemId; version</text>
+			<text x="340" y="494" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,988) scale(1,-1)">dueAt; intervalDays</text>
+			<rect x="330" y="370" width="280" height="80" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="340" y="426" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,852) scale(1,-1)">ReviewEvent</text>
+			<text x="340" y="405" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,810) scale(1,-1)">PK eventId; FK itemId</text>
+			<text x="340" y="384" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,768) scale(1,-1)">rating; reviewedAt; dueAt</text>
+			<rect x="700" y="415" width="280" height="105" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="710" y="496" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,992) scale(1,-1)">Attempt</text>
+			<text x="710" y="475" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,950) scale(1,-1)">PK id; FK itemId</text>
+			<text x="710" y="454" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,908) scale(1,-1)">response; feedback</text>
+			<text x="710" y="433" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,866) scale(1,-1)">state; createdAt</text>
+			<path d="M 240,495 L 280,495 Z" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<path d="M 280,495 L 280,520 Z" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<path d="M 280,520 L 330,520 Z" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<text x="281.648" y="529.0" style="font-family: Helvetica; font-size: 14px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,1058) scale(1,-1)">1    0..1</text>
+			<path d="M 240,435 L 280,435 Z" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<path d="M 280,435 L 280,410 Z" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<path d="M 280,410 L 330,410 Z" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<text x="282.817" y="419.0" style="font-family: Helvetica; font-size: 14px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,838) scale(1,-1)">1    0..*</text>
+			<path d="M 240,470 L 650,470 Z" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<path d="M 650,470 L 700,470 Z" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<text x="411.141" y="479.0" style="font-family: Helvetica; font-size: 14px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,958) scale(1,-1)">1          0..*</text>
+			<rect x="20" y="160" width="280" height="120" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="30" y="256" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,512) scale(1,-1)">AppSettings</text>
+			<text x="30" y="235" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,470) scale(1,-1)">PK singletonId=1</text>
+			<text x="30" y="214" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,428) scale(1,-1)">schema/settingsRevision</text>
+			<text x="30" y="193" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,386) scale(1,-1)">aiConsent; selectedCourseId</text>
+			<text x="30" y="172" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,344) scale(1,-1)">active model digests</text>
+			<rect x="400" y="160" width="280" height="120" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="410" y="256" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,512) scale(1,-1)">ModelProfile</text>
+			<text x="410" y="235" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,470) scale(1,-1)">PK digest; kind; name</text>
+			<text x="410" y="214" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,428) scale(1,-1)">dimension; localVerified</text>
+			<text x="410" y="193" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,386) scale(1,-1)">checkedAt</text>
+			<text x="410" y="172" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,344) scale(1,-1)">active profile per role</text>
+			<rect x="750" y="160" width="230" height="120" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="760" y="256" style="font-family: Helvetica-Bold; font-size: 15px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,512) scale(1,-1)">ImportBatch</text>
+			<text x="760" y="235" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,470) scale(1,-1)">PK id; FK courseId</text>
+			<text x="760" y="214" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,428) scale(1,-1)">FK sessionId (optional)</text>
+			<text x="760" y="193" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,386) scale(1,-1)">requestKey; state; hash</text>
+			<text x="760" y="172" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,344) scale(1,-1)">managedFileId; sourceId</text>
+			<path d="M 300,220 L 400,220 Z" style="stroke: rgb(9%,20%,30%); stroke-linecap: butt; stroke-width: 1.6;"/>
+			<text x="303.303" y="229.0" style="font-family: Helvetica; font-size: 14px;fill: rgb(9%,20%,30%); stroke:none;" transform="translate(0,458) scale(1,-1)">0..1   0..1 / role</text>
+			<text x="20" y="110" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,220) scale(1,-1)">ImportBatch belongs to one Course and optionally one ClassSession; see the explicit FKs above.</text>
+			<text x="20" y="85" style="font-family: Helvetica; font-size: 15px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,170) scale(1,-1)">Ready suggestions need &gt;=1 evidence row. A new draft may temporarily have zero.</text>
+		</g>
+	</g>
+</svg>
