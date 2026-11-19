@@ -6,10 +6,11 @@ Local Study Assistant | Team: Local Agent Systems | Team member: Jason Galanie
 
 | Version | Date | Change | Author |
 | --- | --- | --- | --- |
+| 1.2 review draft | 2026-11-19 | Added Test_Plan.md; expanded nine Must groups to three cases using TC-034-TC-051; retained TC-001-TC-033 and all requirement IDs. | Jason Galanie |
 | 1.1 review draft | 2026-11-19 | Added the constraints essay and reconciled CON sources; no requirement IDs or priorities changed. | Jason Galanie |
 | 1.0 review draft | 2026-11-19 | First consolidated baseline from User Stories, D0-D2 and Week 8 plan; advisor review pending. | Jason Galanie |
 
-Traceability baseline: [Requirements_Document.md](Requirements_Document.md) v1.1 review draft dated 2026-11-19, with 19 REQ, 9 NFR and 5 CON IDs. Its glossary, priorities and scope govern this proposal. Designed does not mean implemented; the matrix is not acceptance evidence.
+Traceability baseline: [Requirements_Document.md](Requirements_Document.md) v1.2 review draft dated 2026-11-19, with 19 REQ, 9 NFR and 5 CON IDs. Its glossary, priorities and scope govern this proposal. Designed does not mean implemented; the matrix is not acceptance evidence.
 
 Consolidation log: I assigned stable REQ IDs, retained D2 NFR meanings and made existing timing/load intentions testable. I carried forward the Week 8 capacity-driven prototype-first scope, leaving the full calendar/native/lecture design linked but deferred. This documents the change since the D2 draft; no architecture edit is attributed to a peer/advisor review that has not happened.
 
@@ -135,23 +136,23 @@ CON-01 through CON-05 now trace to [Constraints_Essay.md](Constraints_Essay.md):
 
 ## 6. Traceability matrix
 
-Baseline: Requirements_Document.md v1.1 review draft, 2026-11-19. In progress means related prototype work has a remaining gap; Designed means the named design exists; Planned means scheduled verification/delivery. TC-001-TC-033 reserve stable Week 10 case IDs, not passed tests or renamed existing unit tests.
+Baseline: Requirements_Document.md v1.2 review draft, 2026-11-19. In progress means related prototype work has a remaining gap; Designed means the named design exists; Planned means scheduled verification/delivery. [Test_Plan.md](Test_Plan.md) v1.0 defines 44 active cases and seven deferred reservations across TC-001-TC-051; none is a passed test or a renamed existing unit test.
 
 | Req ID | Description | Design Component (D0/D1/D2) | Status | Test Case |
 | --- | --- | --- | --- | --- |
-| REQ-01 | Course-bound persistent notes | D1 save_note; D2 C2/C6, 2.8; T4 | In progress | TC-001 (planned) |
-| REQ-02 | Bounded readable file import | D2 F2, ImportSupervisor 2.5; C3; T6 | In progress | TC-002 (planned) |
-| REQ-03 | Checked evidence and exact source opening | D1 Citation/resolve_reference; D2 C1/C4 | In progress | TC-003 (planned) |
-| REQ-04 | Manual cards and explicit acceptance | D1 accept_item; D2 C11, 2.13; T9 | In progress | TC-004 (planned) |
-| REQ-05 | Checked local-model flashcard drafts | D1 algorithm B/submit_task; C4/C5; T9 | In progress | TC-005 (planned) |
-| REQ-06 | Course-scoped exact semantic retrieval | D1 algorithm A/search_evidence; C4/C6; T8 | Designed | TC-006 (planned) |
-| REQ-07 | Evidence-bounded guides and coverage warnings | D1 algorithm B; StudyItem/Citation; C4; T9 | Designed | TC-007 (planned) |
-| REQ-08 | Background jobs, cancellation and recovery | D2 F3/JobSupervisor 2.6; C4; T5/T9 | Designed | TC-008 (planned) |
-| REQ-09 | Self-rated practice and review intervals | D2 ReviewState/ReviewEvent/rate 2.13; C11 | In progress | TC-009 (planned) |
-| REQ-10 | Immutable edits and stale-revision rejection | D1 Source revisions; D2 updateNote 2.8; T4 | Designed | TC-010 (planned) |
-| REQ-11 | Source deletion and dependent cleanup | D2 deleteSource/ManagedFileRecovery 2.8; C6; T10 | In progress | TC-011 (planned) |
-| REQ-12 | Consistent portable course export | D2 exportCourse 2.8; C6; T10 | Designed | TC-012 (planned) |
-| REQ-13 | Model consent and profile readiness | D2 AppSettings/ModelProfile 2.11; C9; T7 | Designed | TC-013 (planned) |
+| REQ-01 | Course-bound persistent notes | D1 save_note; D2 C2/C6, 2.8; T4 | In progress | TC-001, TC-034, TC-035 |
+| REQ-02 | Bounded readable file import | D2 F2, ImportSupervisor 2.5; C3; T6 | In progress | TC-002 |
+| REQ-03 | Checked evidence and exact source opening | D1 Citation/resolve_reference; D2 C1/C4 | In progress | TC-003, TC-036, TC-037 |
+| REQ-04 | Manual cards and explicit acceptance | D1 accept_item; D2 C11, 2.13; T9 | In progress | TC-004, TC-038, TC-039 |
+| REQ-05 | Checked local-model flashcard drafts | D1 algorithm B/submit_task; C4/C5; T9 | In progress | TC-005 |
+| REQ-06 | Course-scoped exact semantic retrieval | D1 algorithm A/search_evidence; C4/C6; T8 | Designed | TC-006, TC-040, TC-041 |
+| REQ-07 | Evidence-bounded guides and coverage warnings | D1 algorithm B; StudyItem/Citation; C4; T9 | Designed | TC-007 |
+| REQ-08 | Background jobs, cancellation and recovery | D2 F3/JobSupervisor 2.6; C4; T5/T9 | Designed | TC-008 |
+| REQ-09 | Self-rated practice and review intervals | D2 ReviewState/ReviewEvent/rate 2.13; C11 | In progress | TC-009 |
+| REQ-10 | Immutable edits and stale-revision rejection | D1 Source revisions; D2 updateNote 2.8; T4 | Designed | TC-010 |
+| REQ-11 | Source deletion and dependent cleanup | D2 deleteSource/ManagedFileRecovery 2.8; C6; T10 | In progress | TC-011, TC-042, TC-043 |
+| REQ-12 | Consistent portable course export | D2 exportCourse 2.8; C6; T10 | Designed | TC-012 |
+| REQ-13 | Model consent and profile readiness | D2 AppSettings/ModelProfile 2.11; C9; T7 | Designed | TC-013 |
 | REQ-14 | Nonintrusive progress announcements | D2 StatusPresenter 2.10; C8 | Designed | TC-014 (deferred) |
 | REQ-15 | Recurring calendar (deferred) | D2 F1/ScheduleRule/saveRule 2.4; C2 | Designed | TC-015 (deferred) |
 | REQ-16 | Lecture assistance (deferred) | D2 F1/SuggestionEvidence/LectureAssistant 2.14 | Designed | TC-016 (deferred) |
@@ -166,24 +167,24 @@ Baseline: Requirements_Document.md v1.1 review draft, 2026-11-19. In progress me
 
 | Req ID | Description | Design Component (D0/D1/D2) | Status | Test Case |
 | --- | --- | --- | --- | --- |
-| NFR-01 | Locality, consent and content-free logs | D2 2.7/2.11/2.12; C5/C9/C10 | In progress | TC-020 (planned) |
-| NFR-02 | No required hosted-service cost | D1 local stack sec.6; C6/C9; LICENSE | In progress | TC-021 (planned) |
-| NFR-03 | Keyboard and spoken-label workflow | D2 2.3/2.10/2.13; C1/C8/C11; T13 | Designed | TC-022 (planned) |
-| NFR-04 | Committed-note fault recovery | D2 F2/F3/2.8; C3/C4/C6; T11/T12 | In progress | TC-023 (planned) |
-| NFR-05 | Loopback, request and text boundaries | D0 I1; D2 C7; server.py/web/app.js; T12 | In progress | TC-024 (planned) |
-| NFR-06 | Clean-account Windows setup | D2 SetupController 2.11; C9; T14 | Planned | TC-025 (planned) |
+| NFR-01 | Locality, consent and content-free logs | D2 2.7/2.11/2.12; C5/C9/C10 | In progress | TC-020, TC-044, TC-045 |
+| NFR-02 | No required hosted-service cost | D1 local stack sec.6; C6/C9; LICENSE | In progress | TC-021, TC-046, TC-047 |
+| NFR-03 | Keyboard and spoken-label workflow | D2 2.3/2.10/2.13; C1/C8/C11; T13 | Designed | TC-022 |
+| NFR-04 | Committed-note fault recovery | D2 F2/F3/2.8; C3/C4/C6; T11/T12 | In progress | TC-023, TC-048, TC-049 |
+| NFR-05 | Loopback, request and text boundaries | D0 I1; D2 C7; server.py/web/app.js; T12 | In progress | TC-024, TC-050, TC-051 |
+| NFR-06 | Clean-account Windows setup | D2 SetupController 2.11; C9; T14 | Planned | TC-025 |
 | NFR-07 | Bounded diagnostics and graceful failure | D2 DiagnosticSink 2.12; C10; T12 | Designed | TC-026 (deferred) |
-| NFR-08 | Save latency and model deadline | D0 timing; D1 size; D2 adapter 2.7; C5/C6 | Planned | TC-027 (planned) |
-| NFR-09 | Question-quality evaluation record | D1 algorithm B; evaluation plan; T11/T15 | Planned | TC-028 (planned) |
-| CON-01 | No required paid API or hosted backend. | D1 sec.6; C5/C6/C9 | Designed | TC-029 (planned) |
-| CON-02 | One student/OS account on one device; no multi-user service. | D0 I1; D2 2.9; C1/C7 | Designed | TC-030 (planned) |
-| CON-03 | Windows first; target hardware resources are not measured yet. | D1 size; D2 2.11; C3/C5/C9 | Designed | TC-031 (planned) |
-| CON-04 | Use permitted content; retain MIT and upstream/model notices. | D2 2.11; C3/C9; Ethics/NOTICE | Designed | TC-032 (planned) |
-| CON-05 | Sole member; 4-8 hours/week, with proposed 6-hour average. | D2 component audit; Planning T1-T15 | Designed | TC-033 (planned) |
+| NFR-08 | Save latency and model deadline | D0 timing; D1 size; D2 adapter 2.7; C5/C6 | Planned | TC-027 |
+| NFR-09 | Question-quality evaluation record | D1 algorithm B; evaluation plan; T11/T15 | Planned | TC-028 |
+| CON-01 | No required paid API or hosted backend. | D1 sec.6; C5/C6/C9 | Designed | TC-029 |
+| CON-02 | One student/OS account on one device; no multi-user service. | D0 I1; D2 2.9; C1/C7 | Designed | TC-030 |
+| CON-03 | Windows first; target hardware resources are not measured yet. | D1 size; D2 2.11; C3/C5/C9 | Designed | TC-031 |
+| CON-04 | Use permitted content; retain MIT and upstream/model notices. | D2 2.11; C3/C9; Ethics/NOTICE | Designed | TC-032 |
+| CON-05 | Sole member; 4-8 hours/week, with proposed 6-hour average. | D2 component audit; Planning T1-T15 | Designed | TC-033 |
 
 Reverse check: all six D0 boxes map to capture/import/retrieval/generation/practice/data-control REQ IDs. C7-C10 map to NFR-01/05/07 and REQ-13/14; C11 to REQ-04/09/19; C12 to REQ-16. Calendar/PPTX/native elements remain linked to REQ-15/17/18 even while deferred. Each CON names a forcing design element. There are zero blank design cells or unresolved design orphans; advisor and peer reviews remain open evidence issues.
 
-Carry each TC ID into the Week 10 plan with its fixture, steps, expected result and evidence path. Requirements-table verification text supplies initial pass/fail conditions. Deferred cases remain reserved, outside this release acceptance run unless scope changes.
+The Week 10 [test plan](Test_Plan.md) supplies five-column cases, fixtures, objective results and evidence paths. TC-034-TC-051 add two cases to every Must group without renumbering the original reservations. Deferred cases stay outside this release acceptance run unless scope changes.
 
 
 <!-- pagebreak -->
@@ -195,7 +196,7 @@ As of November 19, 2026, I have not selected an advisor.
 | Record field | Current evidence |
 | --- | --- |
 | Advisor / actual review date | Not assigned / no review held. |
-| Material prepared | Requirements_Document.md v1.1; this specification v1.1; full 33-row matrix; linked D0-D2 and Week 8 plan. |
+| Material prepared | Requirements_Document.md v1.2; this specification v1.2; full 33-row matrix; linked D0-D2 and Week 8 plan. |
 | Topics actually discussed | None. The proposed agenda below is not meeting evidence. |
 | Changes produced by advisor review | None received; no prior edit is attributed to an advisor. |
 | Owner / next target | I will request advisor assignment through the course process by proposed target 2026-11-23 and confirm the revised review/submission date. |

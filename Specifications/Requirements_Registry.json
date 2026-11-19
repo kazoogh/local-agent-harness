@@ -1,5 +1,5 @@
 {
-  "version": "1.1 review draft",
+  "version": "1.2 review draft",
   "date": "2026-11-19",
   "advisor_status": "No advisor assigned; no review held (owner confirmed 2026-11-19)",
   "functional": [
@@ -301,91 +301,91 @@
       "Course-bound persistent notes",
       "D1 save_note; D2 C2/C6, 2.8; T4",
       "In progress",
-      "TC-001 (planned)"
+      "TC-001, TC-034, TC-035"
     ],
     [
       "REQ-02",
       "Bounded readable file import",
       "D2 F2, ImportSupervisor 2.5; C3; T6",
       "In progress",
-      "TC-002 (planned)"
+      "TC-002"
     ],
     [
       "REQ-03",
       "Checked evidence and exact source opening",
       "D1 Citation/resolve_reference; D2 C1/C4",
       "In progress",
-      "TC-003 (planned)"
+      "TC-003, TC-036, TC-037"
     ],
     [
       "REQ-04",
       "Manual cards and explicit acceptance",
       "D1 accept_item; D2 C11, 2.13; T9",
       "In progress",
-      "TC-004 (planned)"
+      "TC-004, TC-038, TC-039"
     ],
     [
       "REQ-05",
       "Checked local-model flashcard drafts",
       "D1 algorithm B/submit_task; C4/C5; T9",
       "In progress",
-      "TC-005 (planned)"
+      "TC-005"
     ],
     [
       "REQ-06",
       "Course-scoped exact semantic retrieval",
       "D1 algorithm A/search_evidence; C4/C6; T8",
       "Designed",
-      "TC-006 (planned)"
+      "TC-006, TC-040, TC-041"
     ],
     [
       "REQ-07",
       "Evidence-bounded guides and coverage warnings",
       "D1 algorithm B; StudyItem/Citation; C4; T9",
       "Designed",
-      "TC-007 (planned)"
+      "TC-007"
     ],
     [
       "REQ-08",
       "Background jobs, cancellation and recovery",
       "D2 F3/JobSupervisor 2.6; C4; T5/T9",
       "Designed",
-      "TC-008 (planned)"
+      "TC-008"
     ],
     [
       "REQ-09",
       "Self-rated practice and review intervals",
       "D2 ReviewState/ReviewEvent/rate 2.13; C11",
       "In progress",
-      "TC-009 (planned)"
+      "TC-009"
     ],
     [
       "REQ-10",
       "Immutable edits and stale-revision rejection",
       "D1 Source revisions; D2 updateNote 2.8; T4",
       "Designed",
-      "TC-010 (planned)"
+      "TC-010"
     ],
     [
       "REQ-11",
       "Source deletion and dependent cleanup",
       "D2 deleteSource/ManagedFileRecovery 2.8; C6; T10",
       "In progress",
-      "TC-011 (planned)"
+      "TC-011, TC-042, TC-043"
     ],
     [
       "REQ-12",
       "Consistent portable course export",
       "D2 exportCourse 2.8; C6; T10",
       "Designed",
-      "TC-012 (planned)"
+      "TC-012"
     ],
     [
       "REQ-13",
       "Model consent and profile readiness",
       "D2 AppSettings/ModelProfile 2.11; C9; T7",
       "Designed",
-      "TC-013 (planned)"
+      "TC-013"
     ],
     [
       "REQ-14",
@@ -434,42 +434,42 @@
       "Locality, consent and content-free logs",
       "D2 2.7/2.11/2.12; C5/C9/C10",
       "In progress",
-      "TC-020 (planned)"
+      "TC-020, TC-044, TC-045"
     ],
     [
       "NFR-02",
       "No required hosted-service cost",
       "D1 local stack sec.6; C6/C9; LICENSE",
       "In progress",
-      "TC-021 (planned)"
+      "TC-021, TC-046, TC-047"
     ],
     [
       "NFR-03",
       "Keyboard and spoken-label workflow",
       "D2 2.3/2.10/2.13; C1/C8/C11; T13",
       "Designed",
-      "TC-022 (planned)"
+      "TC-022"
     ],
     [
       "NFR-04",
       "Committed-note fault recovery",
       "D2 F2/F3/2.8; C3/C4/C6; T11/T12",
       "In progress",
-      "TC-023 (planned)"
+      "TC-023, TC-048, TC-049"
     ],
     [
       "NFR-05",
       "Loopback, request and text boundaries",
       "D0 I1; D2 C7; server.py/web/app.js; T12",
       "In progress",
-      "TC-024 (planned)"
+      "TC-024, TC-050, TC-051"
     ],
     [
       "NFR-06",
       "Clean-account Windows setup",
       "D2 SetupController 2.11; C9; T14",
       "Planned",
-      "TC-025 (planned)"
+      "TC-025"
     ],
     [
       "NFR-07",
@@ -483,50 +483,51 @@
       "Save latency and model deadline",
       "D0 timing; D1 size; D2 adapter 2.7; C5/C6",
       "Planned",
-      "TC-027 (planned)"
+      "TC-027"
     ],
     [
       "NFR-09",
       "Question-quality evaluation record",
       "D1 algorithm B; evaluation plan; T11/T15",
       "Planned",
-      "TC-028 (planned)"
+      "TC-028"
     ],
     [
       "CON-01",
       "No required paid API or hosted backend.",
       "D1 sec.6; C5/C6/C9",
       "Designed",
-      "TC-029 (planned)"
+      "TC-029"
     ],
     [
       "CON-02",
       "One student/OS account on one device; no multi-user service.",
       "D0 I1; D2 2.9; C1/C7",
       "Designed",
-      "TC-030 (planned)"
+      "TC-030"
     ],
     [
       "CON-03",
       "Windows first; target hardware resources are not measured yet.",
       "D1 size; D2 2.11; C3/C5/C9",
       "Designed",
-      "TC-031 (planned)"
+      "TC-031"
     ],
     [
       "CON-04",
       "Use permitted content; retain MIT and upstream/model notices.",
       "D2 2.11; C3/C9; Ethics/NOTICE",
       "Designed",
-      "TC-032 (planned)"
+      "TC-032"
     ],
     [
       "CON-05",
       "Sole member; 4-8 hours/week, with proposed 6-hour average.",
       "D2 component audit; Planning T1-T15",
       "Designed",
-      "TC-033 (planned)"
+      "TC-033"
     ]
   ],
-  "constraints_essay": "Constraints_Essay.md, prepared 2026-11-19; 12 sentences across Economic, Professional, Security, Legal (Regulatory)"
+  "constraints_essay": "Constraints_Essay.md, prepared 2026-11-19; 12 sentences across Economic, Professional, Security, Legal (Regulatory)",
+  "test_plan": "Test_Plan.md v1.0; 44 active cases plus 7 deferred reservations, TC-001 through TC-051; no test execution claimed"
 }

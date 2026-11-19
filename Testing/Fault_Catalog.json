@@ -1,0 +1,66 @@
+{
+  "version": "1.0",
+  "baseline": "Fresh F1 per trial; compare original NA/NOTE hash; intentional imported-PDF deletion excluded from unintended-loss count",
+  "faults": [
+    {
+      "id": "F01",
+      "name": "Empty PDF",
+      "injection": "Return zero sections from empty.pdf.",
+      "expected": "NO_TEXT; separate committed NOTE retained."
+    },
+    {
+      "id": "F02",
+      "name": "Bad parser",
+      "injection": "Raise parser failure on corrupt.pdf.",
+      "expected": "PARSE_FAILED; zero partial source publication."
+    },
+    {
+      "id": "F03",
+      "name": "Runtime refused",
+      "injection": "Inject connection-refused transport for fixed http://127.0.0.1:11434 in the isolated QA adapter; do not change allowed host/port or stop a real user runtime.",
+      "expected": "MODEL_UNAVAILABLE; NOTE unchanged."
+    },
+    {
+      "id": "F04",
+      "name": "Runtime timeout",
+      "injection": "Pause response and advance fake clock to deadline.",
+      "expected": "TIMEOUT by configured 60-second request deadline."
+    },
+    {
+      "id": "F05",
+      "name": "Stale evidence",
+      "injection": "Increment course library revision before final publication.",
+      "expected": "STALE_LIBRARY; no stale draft publication."
+    },
+    {
+      "id": "F06",
+      "name": "Queued cancellation",
+      "injection": "Cancel saved queued job before claim.",
+      "expected": "failed/CANCELLED; no generated active item."
+    },
+    {
+      "id": "F07",
+      "name": "Restart interruption",
+      "injection": "Terminate isolated app before job publication, then restart.",
+      "expected": "failed/INTERRUPTED; committed NOTE retained."
+    },
+    {
+      "id": "F08",
+      "name": "Locked write",
+      "injection": "Hold exclusive SQLite writer lock longer than 2 seconds.",
+      "expected": "STORAGE_BUSY or specified storage failure; no partial write or note loss."
+    },
+    {
+      "id": "F09",
+      "name": "Failed migration",
+      "injection": "Create backup, then inject migration exception.",
+      "expected": "Old data retained; recovery explanation; no silent empty DB."
+    },
+    {
+      "id": "F10",
+      "name": "Locked managed-file cleanup",
+      "injection": "Lock separate managed PDF copy during confirmed deletion, then unlock/restart.",
+      "expected": "Source immediately unusable; cleanup pending until recovery; NOTE retained."
+    }
+  ]
+}

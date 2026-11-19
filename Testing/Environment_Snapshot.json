@@ -1,0 +1,25 @@
+{
+  "recorded_on": "2026-11-19",
+  "role": "Development only; no product tests executed",
+  "os": "Windows 11 Pro 64-bit",
+  "os_version": "10.0.26300",
+  "build": "26300",
+  "cpu": "AMD Ryzen 7 7800X3D 8-Core Processor",
+  "reported_RAM_GiB": 31.6,
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "browser": {
+    "name": "Microsoft Edge",
+    "version": "157.0.4341.60"
+  },
+  "python": "3.13.5",
+  "sqlite": "3.49.1",
+  "git": "2.49.0.windows.1",
+  "unconfirmed": [
+    "staging build/account",
+    "pilot participants",
+    "screen-reader version",
+    "Ollama version",
+    "model artifact digests/options",
+    "NumPy/pypdf pinned releases"
+  ]
+}

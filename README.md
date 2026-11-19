@@ -25,11 +25,12 @@ Run checks with `python -m unittest discover -s tests -v`. To use a different da
 
 ## 3. Project documents
 
+- [Test plan](Test_Plan.md): verification/validation strategy, metrics, 44 active cases and definition of done.
 - [Project constraints essay](Constraints_Essay.md): 12 sentences across four project-specific areas.
 - [Advisor record](Advisor_Record.md): outstanding advisor agreement, spreadsheet entry and approval evidence.
 - [Team contract draft](Team_Contract.md): v0.1, awaiting member review and advisor approval.
-- [Requirements Document](Requirements_Document.md): v1.1 review draft, measurable requirements, priorities, constraints and open questions.
-- [Technical Specification](Technical_Specification.md): v1.1 review draft, architecture, interfaces and traceability to Requirements Document v1.1.
+- [Requirements Document](Requirements_Document.md): v1.2 review draft, measurable requirements, priorities, constraints and open questions.
+- [Technical Specification](Technical_Specification.md): v1.2 review draft, architecture, interfaces and traceability to Requirements Document v1.2.
 - [Week 04 user stories and use cases](User_Stories.md): assignment submission and acceptance criteria.
 - [Week 04 elicitation notes](docs/elicitation/week04.md): interview themes, competitive review, and remaining stakeholder contact.
 - [Project description](Project-Description.md): current proposal and team information.
@@ -42,3 +43,7 @@ My previous local agent harness proposal remains in Git history. I am carrying i
 
 - [Ethics statement](Ethics_Statement.md) - senior design assignment.
 - [Third-party attribution](NOTICE.md) - upstream sources, dependencies, and asset provenance.
+
+## Appendix: Verification and design evidence
+
+- [Final-report appendix index](docs/appendix.md): includes the test plan, its supporting fixtures and the existing design/requirements/plan sources.

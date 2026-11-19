@@ -6,6 +6,7 @@ Local Study Assistant | Team: Local Agent Systems | Team member: Jason Galanie
 
 | Version | Date | Change | Author |
 | --- | --- | --- | --- |
+| 1.2 review draft | 2026-11-19 | Linked the test plan and updated the companion specification version; requirement statements, IDs and priorities unchanged. | Jason Galanie |
 | 1.1 review draft | 2026-11-19 | Added the constraints essay and reconciled CON sources; no requirement IDs or priorities changed. | Jason Galanie |
 | 1.0 review draft | 2026-11-19 | First consolidated baseline from User Stories, D0-D2 and Week 8 plan; advisor review pending. | Jason Galanie |
 
@@ -13,7 +14,7 @@ REQ identifiers are new stable IDs. Existing D2 NFR-01 through NFR-09 retain the
 
 ## 2. Purpose and scope
 
-Goal: Help students keep notes and make study materials on their own computer for free. I want students to preserve original course notes, retrieve relevant evidence and review supported practice locally. This document states what is required; [Technical_Specification.md](Technical_Specification.md) v1.1 states how it maps to the existing design.
+Goal: Help students keep notes and make study materials on their own computer for free. I want students to preserve original course notes, retrieve relevant evidence and review supported practice locally. This document states what is required; [Technical_Specification.md](Technical_Specification.md) v1.2 states how it maps to the existing design.
 
 The first release follows the Week 8 capacity proposal: the existing local web prototype, readable PDF/text sources, semantic retrieval, checked guides/cards, self-rated practice and data control. Native bridging, recurring calendars, PPTX and automatic lecture organization stay outside this release, with retained IDs. Full D2 completion is not promised at 4-8 hours/week; advisor agreement on reduced scope remains open.
 
@@ -63,7 +64,7 @@ Terms and roles are defined once here; the specification uses this glossary.
 
 ## 5. Functional requirements
 
-Priority scopes this release. Won't rows preserve future design scope rather than promise delivery. Verification IDs reserve Week 10 cases; none is a passed test. Numeric bounds consolidate D0-D2, not benchmark results.
+Priority scopes this release. Won't rows preserve future design scope rather than promise delivery. Verification IDs name the primary cases in [Test_Plan.md](Test_Plan.md); the matrix includes added Must coverage, and none is a passed test. Numeric bounds consolidate D0-D2, not benchmark results.
 
 | ID | Measurable statement | MoSCoW | Source story | Verification |
 | --- | --- | --- | --- | --- |
