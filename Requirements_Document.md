@@ -6,13 +6,14 @@ Local Study Assistant | Team: Local Agent Systems | Team member: Jason Galanie
 
 | Version | Date | Change | Author |
 | --- | --- | --- | --- |
+| 1.1 review draft | 2026-11-19 | Added the constraints essay and reconciled CON sources; no requirement IDs or priorities changed. | Jason Galanie |
 | 1.0 review draft | 2026-11-19 | First consolidated baseline from User Stories, D0-D2 and Week 8 plan; advisor review pending. | Jason Galanie |
 
 REQ identifiers are new stable IDs. Existing D2 NFR-01 through NFR-09 retain their meanings. A dropped requirement will remain marked withdrawn with a reason/version; no ID is reused or renumbered. Earlier US/AC/FR labels remain source references. These formal priorities and acceptance conditions need my review before approval.
 
 ## 2. Purpose and scope
 
-Goal: Help students keep notes and make study materials on their own computer for free. I want students to preserve original course notes, retrieve relevant evidence and review supported practice locally. This document states what is required; [Technical_Specification.md](Technical_Specification.md) v1.0 states how it maps to the existing design.
+Goal: Help students keep notes and make study materials on their own computer for free. I want students to preserve original course notes, retrieve relevant evidence and review supported practice locally. This document states what is required; [Technical_Specification.md](Technical_Specification.md) v1.1 states how it maps to the existing design.
 
 The first release follows the Week 8 capacity proposal: the existing local web prototype, readable PDF/text sources, semantic retrieval, checked guides/cards, self-rated practice and data control. Native bridging, recurring calendars, PPTX and automatic lecture organization stay outside this release, with retained IDs. Full D2 completion is not promised at 4-8 hours/week; advisor agreement on reduced scope remains open.
 
@@ -142,15 +143,15 @@ Won't also includes OCR, LMS integration, cloud sync, automatic grading, audio/v
 
 ## 8. Inherited constraints
 
-The Week 3 essay was not found. These constraints are provisionally inherited from D0, ethics and the plan, not claimed quotations from that essay; I will reconcile their IDs when it is located.
+The constraints now trace to [Constraints_Essay.md](Constraints_Essay.md), prepared November 19, 2026 from the current project decisions. CON-01 through CON-05 retain their IDs and meanings; D0, ethics and the plan remain supporting sources.
 
 | ID | Inherited constraint | Source |
 | --- | --- | --- |
-| CON-01 | No required paid API or hosted backend. | D0 sec.6; US-03; D1 cost |
-| CON-02 | One student/OS account on one device; no multi-user service. | D0 deployment; D2 2.9 |
-| CON-03 | Windows first; target hardware resources are not measured yet. | D0 hardware; D1/D2 setup |
-| CON-04 | Use permitted content; retain MIT and upstream/model notices. | Ethics; LICENSE/NOTICE; US-05 |
-| CON-05 | Sole member; 4-8 hours/week, with proposed 6-hour average. | Project-Description; owner availability; plan |
+| CON-01 | No required paid API or hosted backend. | Constraints_Essay: Economic; D0/D1 cost |
+| CON-02 | One student/OS account on one device; no multi-user service. | Constraints_Essay: Security; D2 2.9 |
+| CON-03 | Windows first; target hardware resources are not measured yet. | Constraints_Essay: Economic/Professional; D0 hardware |
+| CON-04 | Use permitted content; retain MIT and upstream/model notices. | Constraints_Essay: Legal; LICENSE/NOTICE |
+| CON-05 | Sole member; 4-8 hours/week, with proposed 6-hour average. | Constraints_Essay: Professional; owner availability/plan |
 
 
 <!-- pagebreak -->
@@ -164,11 +165,11 @@ Dates below are proposed follow-up targets, not instructor deadlines. I own each
 | Q1: No advisor assigned; no advisor review held. | I | 2026-11-23 | Request assignment through the course process; record the actual review date/discussion/edits when held. |
 | Q2: Real D2 peer feedback is missing. | I | 2026-11-23 | Collect teams/comments and my two review issues; apply must-fix actions without claiming participation that has not occurred. |
 | Q3: Scope and formal priorities need confirmation. | I | 2026-11-23 | Review requirements/priorities myself; obtain advisor agreement on deferred UC-01 coverage. |
-| Q4: Week 3 essay and exact remaining deadlines are missing. | I | 2026-11-23 | Locate constraints; confirm revised submission/review dates. The pasted October 30 deadline is past. |
+| Q4: Exact remaining course deadlines need confirmation. | I | 2026-11-23 | Confirm revised submission/review dates. The pasted October 30 deadline is past. |
 | Q5: Target hardware/model artifacts are unqualified. | I | 2027-01-11 | Record Windows/CPU/RAM/model digests; run locality/readiness/performance checks before making claims. |
 | Q6: Accessibility and question quality need validation. | I | 2027-03-30 | Run keyboard/screen-reader checks and permitted-material evaluation; disclose missing stakeholder evidence. |
 | Q7: Actual availability may fall to 4 hours/week. | I | Weekly from 2027-01-11 | Compare actuals with the proposed 6-hour plan; agree scope/date changes if lower capacity persists. |
 
 Assumptions: one student controls the OS account; source files are permitted; models can be downloaded initially; saved notes/manual practice remain usable without the model. These do not establish protection against a compromised OS or prove model accuracy.
 
-Sources: [User Stories](User_Stories.md), [D0](Design_Diagrams/D0_High_Level_Design.md), [D1](Design_Diagrams/D1_Detailed_Design.md), [D2](Design_Diagrams/D2_Detailed_Design.md), [Week 8 plan](Planning/Task_and_Milestone_Plan.md) and [ethics](Ethics_Statement.md). This consolidation claims no new interview, review, submission or benchmark.
+Sources: [Constraints essay](Constraints_Essay.md), [User Stories](User_Stories.md), [D0](Design_Diagrams/D0_High_Level_Design.md), [D1](Design_Diagrams/D1_Detailed_Design.md), [D2](Design_Diagrams/D2_Detailed_Design.md), [Week 8 plan](Planning/Task_and_Milestone_Plan.md) and [ethics](Ethics_Statement.md). This consolidation claims no new interview, review, submission or benchmark.

@@ -62,7 +62,7 @@ def render():
   if line.startswith('# '):story.append(Paragraph(inline(line[2:]),styles['Title']));i+=1;continue
   story.append(Paragraph(inline(line),styles['BodyPlan']));i+=1
  def foot(c,doc):
-  c.setStrokeColor(GRID);c.line(54,41,558,41);c.setFont('Helvetica',8);c.setFillColor(NAVY);c.drawString(54,28,'Local Study Assistant | '+DOC_LABEL+' | v1.0 review draft');c.drawRightString(558,28,str(doc.page))
+  c.setStrokeColor(GRID);c.line(54,41,558,41);c.setFont('Helvetica',8);c.setFillColor(NAVY);c.drawString(54,28,'Local Study Assistant | '+DOC_LABEL+' | v1.1 review draft');c.drawRightString(558,28,str(doc.page))
  pdf=OUT/OUTPUT_NAME
  SimpleDocTemplate(str(pdf),pagesize=(612,792),leftMargin=54,rightMargin=54,topMargin=42,bottomMargin=55,title='Local Study Assistant - '+DOC_LABEL,author=OWNER).build(story,onFirstPage=foot,onLaterPages=foot)
  return pdf

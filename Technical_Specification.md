@@ -6,9 +6,10 @@ Local Study Assistant | Team: Local Agent Systems | Team member: Jason Galanie
 
 | Version | Date | Change | Author |
 | --- | --- | --- | --- |
+| 1.1 review draft | 2026-11-19 | Added the constraints essay and reconciled CON sources; no requirement IDs or priorities changed. | Jason Galanie |
 | 1.0 review draft | 2026-11-19 | First consolidated baseline from User Stories, D0-D2 and Week 8 plan; advisor review pending. | Jason Galanie |
 
-Traceability baseline: [Requirements_Document.md](Requirements_Document.md) v1.0 review draft dated 2026-11-19, with 19 REQ, 9 NFR and 5 CON IDs. Its glossary, priorities and scope govern this proposal. Designed does not mean implemented; the matrix is not acceptance evidence.
+Traceability baseline: [Requirements_Document.md](Requirements_Document.md) v1.1 review draft dated 2026-11-19, with 19 REQ, 9 NFR and 5 CON IDs. Its glossary, priorities and scope govern this proposal. Designed does not mean implemented; the matrix is not acceptance evidence.
 
 Consolidation log: I assigned stable REQ IDs, retained D2 NFR meanings and made existing timing/load intentions testable. I carried forward the Week 8 capacity-driven prototype-first scope, leaving the full calendar/native/lecture design linked but deferred. This documents the change since the D2 draft; no architecture edit is attributed to a peer/advisor review that has not happened.
 
@@ -127,14 +128,14 @@ I retain D1 choices and the Week 8 prototype-first deployment. Candidate artifac
 | CON-04 | Use permitted content; retain MIT and upstream/model notices. | Forces permission-cleared fixtures and separate notices; rules out bundling unlicensed course material. |
 | CON-05 | Sole member; 4-8 hours/week, with proposed 6-hour average. | Forces staged scope, 20% contingency and protected gates; full D2 completion is not promised by April. |
 
-Week 3 provenance is open because the essay was not found. NFR-08 is an inherited design target with an explicit test load, not an actual measurement. Same-OS-user/runtime trust limits remain. Scope, constraints and priorities are those of Requirements_Document.md v1.0, not a claim of advisor approval.
+CON-01 through CON-05 now trace to [Constraints_Essay.md](Constraints_Essay.md): Economic supports CON-01/03, Professional supports CON-03/05, Security supports CON-02 and Legal supports CON-04. NFR-08 remains a design target, not a measurement; advisor review and scope agreement remain pending.
 
 
 <!-- pagebreak -->
 
 ## 6. Traceability matrix
 
-Baseline: Requirements_Document.md v1.0 review draft, 2026-11-19. In progress means related prototype work has a remaining gap; Designed means the named design exists; Planned means scheduled verification/delivery. TC-001-TC-033 reserve stable Week 10 case IDs, not passed tests or renamed existing unit tests.
+Baseline: Requirements_Document.md v1.1 review draft, 2026-11-19. In progress means related prototype work has a remaining gap; Designed means the named design exists; Planned means scheduled verification/delivery. TC-001-TC-033 reserve stable Week 10 case IDs, not passed tests or renamed existing unit tests.
 
 | Req ID | Description | Design Component (D0/D1/D2) | Status | Test Case |
 | --- | --- | --- | --- | --- |
@@ -180,7 +181,7 @@ Baseline: Requirements_Document.md v1.0 review draft, 2026-11-19. In progress me
 | CON-04 | Use permitted content; retain MIT and upstream/model notices. | D2 2.11; C3/C9; Ethics/NOTICE | Designed | TC-032 (planned) |
 | CON-05 | Sole member; 4-8 hours/week, with proposed 6-hour average. | D2 component audit; Planning T1-T15 | Designed | TC-033 (planned) |
 
-Reverse check: all six D0 boxes map to capture/import/retrieval/generation/practice/data-control REQ IDs. C7-C10 map to NFR-01/05/07 and REQ-13/14; C11 to REQ-04/09/19; C12 to REQ-16. Calendar/PPTX/native elements remain linked to REQ-15/17/18 even while deferred. Each CON names a forcing design element. There are zero blank design cells or unresolved design orphans; missing review/essay provenance is recorded as an open evidence issue.
+Reverse check: all six D0 boxes map to capture/import/retrieval/generation/practice/data-control REQ IDs. C7-C10 map to NFR-01/05/07 and REQ-13/14; C11 to REQ-04/09/19; C12 to REQ-16. Calendar/PPTX/native elements remain linked to REQ-15/17/18 even while deferred. Each CON names a forcing design element. There are zero blank design cells or unresolved design orphans; advisor and peer reviews remain open evidence issues.
 
 Carry each TC ID into the Week 10 plan with its fixture, steps, expected result and evidence path. Requirements-table verification text supplies initial pass/fail conditions. Deferred cases remain reserved, outside this release acceptance run unless scope changes.
 
@@ -194,7 +195,7 @@ As of November 19, 2026, I have not selected an advisor.
 | Record field | Current evidence |
 | --- | --- |
 | Advisor / actual review date | Not assigned / no review held. |
-| Material prepared | Requirements_Document.md v1.0; this specification v1.0; full 33-row matrix; linked D0-D2 and Week 8 plan. |
+| Material prepared | Requirements_Document.md v1.1; this specification v1.1; full 33-row matrix; linked D0-D2 and Week 8 plan. |
 | Topics actually discussed | None. The proposed agenda below is not meeting evidence. |
 | Changes produced by advisor review | None received; no prior edit is attributed to an advisor. |
 | Owner / next target | I will request advisor assignment through the course process by proposed target 2026-11-23 and confirm the revised review/submission date. |
@@ -202,7 +203,7 @@ As of November 19, 2026, I have not selected an advisor.
 
 ### Proposed agenda and change procedure
 
-Confirm reduced scope against D2, the nine Must priorities and 4-8-hour capacity; reconcile Week 3 constraints; inspect each mapping; agree hardware/NFR checks; confirm course dates and real peer-review actions. These are prepared questions, not discussions that have occurred.
+Confirm reduced scope against D2, the nine Must priorities and 4-8-hour capacity; review the completed constraints essay; inspect each mapping; agree hardware/NFR checks; confirm course dates and real peer-review actions. These are prepared questions, not discussions that have occurred.
 
 After review I will record its actual date, advisor, comments, decisions, affected IDs, file/section edits and version increment. Withdrawn IDs stay in the requirements/change log. Scope or threshold edits must update both documents, the plan and test cases together.
 

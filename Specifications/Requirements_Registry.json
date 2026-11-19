@@ -1,5 +1,5 @@
 {
-  "version": "1.0 review draft",
+  "version": "1.1 review draft",
   "date": "2026-11-19",
   "advisor_status": "No advisor assigned; no review held (owner confirmed 2026-11-19)",
   "functional": [
@@ -262,35 +262,35 @@
     [
       "CON-01",
       "No required paid API or hosted backend.",
-      "D0 sec.6; US-03; D1 cost",
+      "Constraints_Essay: Economic; D0/D1 cost",
       "Forces local storage/inference and a manual path; rules out required cloud services.",
       "D1 sec.6; C5/C6/C9"
     ],
     [
       "CON-02",
       "One student/OS account on one device; no multi-user service.",
-      "D0 deployment; D2 2.9",
+      "Constraints_Essay: Security; D2 2.9",
       "Forces loopback/trusted local boundaries; rules out public deployment and account-isolation claims.",
       "D0 I1; D2 2.9; C1/C7"
     ],
     [
       "CON-03",
       "Windows first; target hardware resources are not measured yet.",
-      "D0 hardware; D1/D2 setup",
+      "Constraints_Essay: Economic/Professional; D0 hardware",
       "Forces bounded imports/prompts/queue and target-PC tests; rules out a universal laptop-fit guarantee.",
       "D1 size; D2 2.11; C3/C5/C9"
     ],
     [
       "CON-04",
       "Use permitted content; retain MIT and upstream/model notices.",
-      "Ethics; LICENSE/NOTICE; US-05",
+      "Constraints_Essay: Legal; LICENSE/NOTICE",
       "Forces permission-cleared fixtures and separate notices; rules out bundling unlicensed course material.",
       "D2 2.11; C3/C9; Ethics/NOTICE"
     ],
     [
       "CON-05",
       "Sole member; 4-8 hours/week, with proposed 6-hour average.",
-      "Project-Description; owner availability; plan",
+      "Constraints_Essay: Professional; owner availability/plan",
       "Forces staged scope, 20% contingency and protected gates; full D2 completion is not promised by April.",
       "D2 component audit; Planning T1-T15"
     ]
@@ -527,5 +527,6 @@
       "Designed",
       "TC-033 (planned)"
     ]
-  ]
+  ],
+  "constraints_essay": "Constraints_Essay.md, prepared 2026-11-19; 12 sentences across Economic, Professional, Security, Legal (Regulatory)"
 }
