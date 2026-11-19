@@ -2,19 +2,19 @@
 
 ## 1. Header, scope, and conventions
 
-Local Study Assistant - Design D1 | Jason Galanie
+Local Study Assistant - Design D1 | Team: Local Agent Systems | Jason Galanie
 
 Goal: Help students keep notes and make study materials on their own computer for free.
 
-D1 details the local data store and study engine from D0; interface screens, calendar behavior, file import, full Ollama setup/adapter details, and quiz-review scheduling are deferred to D2.
+In D1, I detail the local data store and study engine from D0. I defer interface screens, calendar behavior, file import, full Ollama setup/adapter details, and quiz-review scheduling to D2.
 
-This is a proposed detailed design, not a report of completed implementation. It keeps one course per item, optional meeting dates, local semantic search, direct source links, and background generation from our D0 decisions.
+I propose this detailed design for implementation. I carry forward my D0 decisions: one course per item, optional meeting dates, local semantic search, direct source links, and background generation.
 
 ## 2. Data model, the D1 diagram
 
 ![D1 data model](D1_Data_Model.svg)
 
-The relationship count beside a box tells how many of that entity may relate to one entity at the other end. Example: a session can have many sources, but each source has at most one session. This is a relational design; the searchable vectors are stored alongside source records.
+The relationship count beside a box tells how many of that entity may relate to one entity at the other end. Example: a session can have many sources, but each source has at most one session. I chose a relational design and store the searchable vectors alongside source records.
 
 ## 2. Data model, the D1 diagram (continued)
 
@@ -40,11 +40,7 @@ What / problem: RAG means the app stores and retrieves course material; the mode
 
 Inputs / outputs: index input is SourceSection[] plus embeddingModelDigest: string. Output is IndexEntry[] with passageId: UUID, modelDigest: string, vector: float32[768] for the initial profile, and ready: boolean. A search takes courseId: UUID, query: string (1-300 characters), k: integer (1-32), and the digest; it returns RankedPassage[] {passageId: UUID, score: float in [-1,1], location: SourceLocation}. Other models need a new dimension/profile and full re-indexing.
 
-## 3. Core algorithms (continued)
-
-### A. Build and search the course memory (continued)
-
-Steps / choice: prefix Nomic document text with search_document: and queries with search_query: [2]. Filter to the chosen course and current source revisions, then compare the normalized query vector with each eligible passage vector using a dot product. Keep the best k with the library top-k operation; ties use passageId. This exact search is the first implementation: it is easy to compare with known results and needs no extra vector server. Keyword-only search does not meet my semantic-search choice. An approximate index may help later, but its recall and added complexity need measurements first.
+Steps / choice: prefix Nomic document text with search_document: and queries with search_query: [2]. Filter to the chosen course and current source revisions, then compare the normalized query vector with each eligible passage vector using a dot product. Keep the best k with the library top-k operation; ties use passageId. I chose exact search for my first implementation because I can compare it with known results and avoid an extra vector server. Keyword-only search does not meet my semantic-search choice. An approximate index may help later, but its recall and added complexity need measurements first.
 
 Complexity / scale: let N be passages in the selected course, d vector dimensions, and k the returned count. Exact search is O(Nd + N log k); block processing uses O(Bd + k) working memory for block size B=256, excluding stored data. Index creation costs O(T + E(T)) for T characters plus embedding-model work E, whose runtime must be measured. The API does not pretend neural inference has a fixed speed.
 
@@ -55,7 +51,9 @@ Complexity / scale: let N be passages in the selected course, d vector dimension
 | Raw float32 vector bytes | 3.07 MB/course; 15.36 MB total | 307.2 MB/course; 1.536 GB total |
 | Implication | Exact search is a reasonable prototype to measure. | Full re-indexing and scanning may be slow on a laptop. Stream blocks; measure before choosing an approximate index. Text, model memory, and DB overhead are extra. |
 
-Edge cases: empty course -> EMPTY_LIBRARY; no vectors/current model -> INDEX_NOT_READY; missing model -> MODEL_UNAVAILABLE. Reject non-finite, zero-norm, or wrong-dimension vectors. A duplicate upload hash in the same course prompts the user before indexing again; repeated notes are not discarded. If a passage exceeds the model token limit despite the character bound, split again; disable silent truncation. All-course search excludes other courses. Deleted sources and model changes invalidate the affected index entries.
+Edge cases: empty course -> EMPTY_LIBRARY; no vectors/current model -> INDEX_NOT_READY; missing model -> MODEL_UNAVAILABLE. Reject non-finite, zero-norm, or wrong-dimension vectors. A duplicate upload hash in the same course prompts the user before indexing again; repeated notes are not discarded. If a passage exceeds the model token limit despite the character bound, split again; disable silent truncation. Searching the full selected-course history excludes other courses. Deleted sources and model changes invalidate the affected index entries.
+
+## 3. Core algorithms (continued)
 
 ### B. Generate study items and check their source links
 
@@ -71,7 +69,7 @@ These are working choices for the design, not a claim that the dependencies have
 
 | Piece | Build / reuse | Library / license | Maturity, performance, and fit |
 | --- | --- | --- | --- |
-| Courses, source revisions, source links | Build | Project code; app license still to be selected. | Specific to this app. Enforce course ownership and preserve original text. |
+| Courses, source revisions, source links | Build | Project code; MIT (repository LICENSE). | Specific to this app. Enforce course ownership and preserve original text. |
 | Relational storage and transactions | Reuse | SQLite + Python sqlite3; public domain / PSF terms. [1,3] | Established local storage, no server. Use short transactions and per-worker connections; benchmark save contention. |
 | Embedding inference | Reuse | Ollama (MIT); Nomic embed-text candidate (Apache-2.0). [2,4] | Documented local embedding API. Extra model download is accepted; measure index speed and verify dimension/digest at setup. |
 | Vector math / ranking | Reuse + build course filtering | NumPy (BSD-3-Clause); Python heapq (PSF). [3,5] | Established array math and top-k primitives. Exact block scan avoids another service; linear scanning can be a large-library bottleneck. |
@@ -153,7 +151,7 @@ Versioning: version the internal bridge contract as v1 and the database with num
 
 ## 6. Technology choices with justification
 
-These are proposed working choices for review. Python, SQLite, and HTML/CSS/JavaScript are acceptable to me, and they are present in the prototype. Semantic retrieval and desktop packaging are new work to learn and test; I am not claiming prior experience with every library.
+I chose Python, SQLite, and HTML/CSS/JavaScript because I am comfortable using them and they are already present in my prototype. Semantic retrieval and desktop packaging are new work to learn and test; I am not claiming prior experience with every library.
 
 ### Database - SQLite
 
@@ -174,6 +172,8 @@ Skill fit: the prototype already calls Ollama; embeddings are new work. Licensin
 ### Hosting, distribution, and jobs - one local Windows app
 
 Skill fit: Windows is the first target; packaging is new work. Licensing: PyInstaller has a bundling exception, while app/dependency licenses still apply. Community/support: upstream packaging guidance is available. Performance: queue model work and keep note transactions short; show progress and retry instructions. Cost/hosting: the app needs download space and the student's hardware, not a hosted backend. A cloud queue is unnecessary; local work uses Python's worker tools. [3,8]
+
+## 6. Technology choices with justification (sources)
 
 Source key (first-party documentation and license files, checked for this draft):
 
