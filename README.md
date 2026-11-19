@@ -23,8 +23,10 @@ python -m study_assistant.server
 
 Run checks with `python -m unittest discover -s tests -v`. To use a different database location, set `STUDY_DB_PATH` before starting the server.
 
-## Project documents
+## 3. Project documents
 
+- [Requirements Document](Requirements_Document.md): v1.0 review draft, measurable requirements, priorities, constraints and open questions.
+- [Technical Specification](Technical_Specification.md): v1.0 review draft, architecture, interfaces and traceability to Requirements Document v1.0.
 - [Week 04 user stories and use cases](User_Stories.md): assignment submission and acceptance criteria.
 - [Week 04 elicitation notes](docs/elicitation/week04.md): interview themes, competitive review, and remaining stakeholder contact.
 - [Project description](Project-Description.md): current proposal and team information.

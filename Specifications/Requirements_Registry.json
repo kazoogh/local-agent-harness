@@ -1,0 +1,531 @@
+{
+  "version": "1.0 review draft",
+  "date": "2026-11-19",
+  "advisor_status": "No advisor assigned; no review held (owner confirmed 2026-11-19)",
+  "functional": [
+    [
+      "REQ-01",
+      "The system shall save each 1-100,000-character note to exactly one existing course, reject a meeting from another course, and return the same note after restart.",
+      "Must",
+      "US-05; D0 I4",
+      "Save/restart; reject wrong-course session.",
+      "D1 save_note; D2 C2/C6, 2.8; T4",
+      "In progress"
+    ],
+    [
+      "REQ-02",
+      "The system shall import text/Markdown and readable PDFs up to 20 MiB, 500 pages and 1,000,000 extracted characters; zero readable text shall return NO_TEXT while retaining separately saved notes.",
+      "Should",
+      "US-05; AC-01.2",
+      "Readable/empty/limit fixtures; inspect saved note.",
+      "D2 F2, ImportSupervisor 2.5; C3; T6",
+      "In progress"
+    ],
+    [
+      "REQ-03",
+      "The system shall reject every unknown/wrong-course citation or quote unequal to its stored passage slice; accepted references shall open the exact note/page or return SOURCE_GONE.",
+      "Must",
+      "US-01/02/05; AC-01.1",
+      "Valid/invalid quote and removed-source cases.",
+      "D1 Citation/resolve_reference; D2 C1/C4",
+      "In progress"
+    ],
+    [
+      "REQ-04",
+      "The system shall permit manual supported-card creation and explicit draft acceptance, with zero draft-status items eligible for active practice before acceptance.",
+      "Must",
+      "US-02; plan T9",
+      "Create, accept; inspect active practice.",
+      "D1 accept_item; D2 C11, 2.13; T9",
+      "In progress"
+    ],
+    [
+      "REQ-05",
+      "The system shall request 1-20 local-model flashcard drafts, retain only checked candidates and return NO_SUPPORTED_ITEMS if none survive; failed generation shall leave saved notes unchanged.",
+      "Should",
+      "US-02/03; D1 B",
+      "Malformed/unsupported/offline model fixtures.",
+      "D1 algorithm B/submit_task; C4/C5; T9",
+      "In progress"
+    ],
+    [
+      "REQ-06",
+      "The system shall search current passages from only the selected course and embedding digest, return at most k=1-32 cosine-ranked matches, break ties by passage ID and reject incompatible vectors.",
+      "Must",
+      "US-03; D0 search choice",
+      "Compare exact ranking and course/digest filters.",
+      "D1 algorithm A/search_evidence; C4/C6; T8",
+      "Designed"
+    ],
+    [
+      "REQ-07",
+      "The system shall generate a source-linked guide from at most 8,000 evidence characters and label uncovered material instead of claiming complete course coverage.",
+      "Should",
+      "US-01; D1 B",
+      "Check guide citations, budget and warning.",
+      "D1 algorithm B; StudyItem/Citation; C4; T9",
+      "Designed"
+    ],
+    [
+      "REQ-08",
+      "The system shall return a saved job ID before model inference, expose queued/running/done/failed states, accept cancellation and mark unfinished jobs INTERRUPTED after restart.",
+      "Should",
+      "US-03/05; D0 background choice",
+      "Poll, cancel, restart; continue note saving.",
+      "D2 F3/JobSupervisor 2.6; C4; T5/T9",
+      "Designed"
+    ],
+    [
+      "REQ-09",
+      "The system shall reveal accepted answers/sources before self-rating; again schedules 1 day, good schedules 3 days initially then doubles to a 30-day cap, with one update per review event ID.",
+      "Should",
+      "US-02; plan T9",
+      "Check interval arithmetic and duplicate events.",
+      "D2 ReviewState/ReviewEvent/rate 2.13; C11",
+      "In progress"
+    ],
+    [
+      "REQ-10",
+      "The system shall save accepted note edits as new immutable revisions, preserve the original and reject stale base revisions rather than overwrite concurrent work.",
+      "Should",
+      "US-05; AC-01.1",
+      "Inspect originals; attempt stale edit.",
+      "D1 Source revisions; D2 updateNote 2.8; T4",
+      "Designed"
+    ],
+    [
+      "REQ-11",
+      "The system shall immediately remove a confirmed source from search/dependent practice, report managed-file cleanup as pending until complete, and leave the student-owned original file unchanged.",
+      "Must",
+      "US-05; data-control plan",
+      "Delete and inspect dependents; lock managed file.",
+      "D2 deleteSource/ManagedFileRecovery 2.8; C6; T10",
+      "In progress"
+    ],
+    [
+      "REQ-12",
+      "The system shall export a consistent course snapshot as versioned JSON and managed files with SHA-256 manifest hashes; denied/full destinations shall fail without modifying course data.",
+      "Should",
+      "US-05; data-control plan",
+      "Check manifest/hashes; denied/full destination.",
+      "D2 exportCourse 2.8; C6; T10",
+      "Designed"
+    ],
+    [
+      "REQ-13",
+      "The system shall obtain consent before background model indexing, retain selected profile digests and disable model work on consent revocation or profile mismatch until corrected.",
+      "Should",
+      "US-03/05; D2 setup",
+      "Toggle consent; replace digest; check gating.",
+      "D2 AppSettings/ModelProfile 2.11; C9; T7",
+      "Designed"
+    ],
+    [
+      "REQ-14",
+      "The system shall display job outcomes without stealing keyboard focus, poll no faster than once per second and coalesce repeated unchanged announcements.",
+      "Could",
+      "US-04; D0 progress choice",
+      "Repeat status polls; inspect focus/announcements.",
+      "D2 StatusPresenter 2.10; C8",
+      "Designed"
+    ],
+    [
+      "REQ-15",
+      "The system shall expand up to 14 meeting rules per course over at most 366 days, preserve referenced sessions and require an explicit decision for ambiguous/nonexistent local times.",
+      "Won't",
+      "US-05; D0 calendar choice",
+      "Deferred calendar/DST fixtures when rescheduled.",
+      "D2 F1/ScheduleRule/saveRule 2.4; C2",
+      "Designed"
+    ],
+    [
+      "REQ-16",
+      "The system shall keep lecture organization as a separate checked suggestion, accept it as a new revision and create zero slide additions/questions when selected slides have no readable text.",
+      "Won't",
+      "US-05; UC-01; AC-01.1/2",
+      "Deferred accept/stale/zero-text note-slide cases.",
+      "D2 F1/SuggestionEvidence/LectureAssistant 2.14",
+      "Designed"
+    ],
+    [
+      "REQ-17",
+      "The system shall extract supported PPTX text with 1-based slide locations and reject files exceeding D2 parser limits without publishing partial sources.",
+      "Won't",
+      "US-05; D2 import design",
+      "Deferred readable/corrupt/oversized slides.",
+      "D2 ImportSupervisor 2.5; C3",
+      "Designed"
+    ],
+    [
+      "REQ-18",
+      "The system shall expose a privileged desktop bridge only to shipped trusted views, reject untrusted navigation/file tokens and never fall back to a public bridge.",
+      "Won't",
+      "US-03; D1 desktop target",
+      "Deferred forged-token/untrusted-view cases.",
+      "D2 BridgeGuard 2.9; C1/C7",
+      "Designed"
+    ],
+    [
+      "REQ-19",
+      "The system shall store formative quiz attempts with expected answers/references, retain accepted evidence when model feedback fails and make zero automatic grade claims.",
+      "Could",
+      "US-02; D2 practice design",
+      "Deferred feedback-failure/saved-attempt fixtures.",
+      "D2 Attempt/submitAnswer 2.13; C11",
+      "Designed"
+    ]
+  ],
+  "nonfunctional": [
+    [
+      "NFR-01",
+      "The system shall make zero cloud-content requests in the local-only workflow, require explicit consent before model processing and log zero note/prompt/answer text in diagnostics.",
+      "Must",
+      "US-03/05; D2 privacy",
+      "Inspect calls/logs, consent and local-profile gating.",
+      "D2 2.7/2.11/2.12; C5/C9/C10",
+      "In progress"
+    ],
+    [
+      "NFR-02",
+      "The system shall require zero paid API keys, subscriptions or hosted app services for capture/local practice and distribute original project code under the repository MIT license.",
+      "Must",
+      "US-03; D0 cost; LICENSE",
+      "Run without account/key; inspect license/notices.",
+      "D1 local stack sec.6; C6/C9; LICENSE",
+      "In progress"
+    ],
+    [
+      "NFR-03",
+      "The system shall support 100% of the scripted open-course, capture, save, practice, reveal, open-source, return and rate steps with keyboard-only input, visible focus and meaningful spoken labels.",
+      "Should",
+      "US-04",
+      "Execute eight steps with keyboard/screen reader.",
+      "D2 2.3/2.10/2.13; C1/C8/C11; T13",
+      "Designed"
+    ],
+    [
+      "NFR-04",
+      "The system shall lose zero committed notes across ten fault cases: empty/bad import, model refusal/timeout, stale evidence, cancellation/restart, locked write, failed migration and locked-file deletion.",
+      "Must",
+      "US-03/05; D2 reliability",
+      "Run ten cases; compare saved-note hashes.",
+      "D2 F2/F3/2.8; C3/C4/C6; T11/T12",
+      "In progress"
+    ],
+    [
+      "NFR-05",
+      "The system shall bind the release prototype only to loopback, reject all off-allowlist Host/Origin requests and execute zero student/model strings as HTML; no shared-account isolation is claimed.",
+      "Must",
+      "US-03/05; D0 local boundary",
+      "Inspect bind; send hostile headers/text.",
+      "D0 I1; D2 C7; server.py/web/app.js; T12",
+      "In progress"
+    ],
+    [
+      "NFR-06",
+      "The system shall complete one documented capture-to-practice run on a clean Windows account with zero source edits; manual Python setup is an allowed packaging fallback.",
+      "Should",
+      "US-03; D2 setup; plan T14",
+      "Follow setup on clean account; record failures.",
+      "D2 SetupController 2.11; C9; T14",
+      "Planned"
+    ],
+    [
+      "NFR-07",
+      "The system shall keep at most five 1-MiB metadata log files, return logged=false on diagnostic failure and cause zero note-save failures solely from unavailable logging.",
+      "Could",
+      "US-03/05; D2 reliability",
+      "Force rotation/denied log output; save note.",
+      "D2 DiagnosticSink 2.12; C10; T12",
+      "Designed"
+    ],
+    [
+      "NFR-08",
+      "The system shall acknowledge all ten sequential 100-character note saves within 1 second each on the nominated Windows demo PC with 5 courses/5,000 passages; model requests shall enforce a 60-second deadline.",
+      "Should",
+      "US-05/03; D0 timing; D1 size",
+      "Time ten saves outside import/inference; stall model.",
+      "D0 timing; D1 size; D2 adapter 2.7; C5/C6",
+      "Planned"
+    ],
+    [
+      "NFR-09",
+      "The system shall provide evaluation counts for source support, clarity, usefulness and failures on at least 20 permitted candidate questions, with zero measured learning-gain claims from that sample.",
+      "Should",
+      "US-01/02; evaluation plan",
+      "Inspect labeled sample and counts/limitations.",
+      "D1 algorithm B; evaluation plan; T11/T15",
+      "Planned"
+    ]
+  ],
+  "constraints": [
+    [
+      "CON-01",
+      "No required paid API or hosted backend.",
+      "D0 sec.6; US-03; D1 cost",
+      "Forces local storage/inference and a manual path; rules out required cloud services.",
+      "D1 sec.6; C5/C6/C9"
+    ],
+    [
+      "CON-02",
+      "One student/OS account on one device; no multi-user service.",
+      "D0 deployment; D2 2.9",
+      "Forces loopback/trusted local boundaries; rules out public deployment and account-isolation claims.",
+      "D0 I1; D2 2.9; C1/C7"
+    ],
+    [
+      "CON-03",
+      "Windows first; target hardware resources are not measured yet.",
+      "D0 hardware; D1/D2 setup",
+      "Forces bounded imports/prompts/queue and target-PC tests; rules out a universal laptop-fit guarantee.",
+      "D1 size; D2 2.11; C3/C5/C9"
+    ],
+    [
+      "CON-04",
+      "Use permitted content; retain MIT and upstream/model notices.",
+      "Ethics; LICENSE/NOTICE; US-05",
+      "Forces permission-cleared fixtures and separate notices; rules out bundling unlicensed course material.",
+      "D2 2.11; C3/C9; Ethics/NOTICE"
+    ],
+    [
+      "CON-05",
+      "Sole member; 4-8 hours/week, with proposed 6-hour average.",
+      "Project-Description; owner availability; plan",
+      "Forces staged scope, 20% contingency and protected gates; full D2 completion is not promised by April.",
+      "D2 component audit; Planning T1-T15"
+    ]
+  ],
+  "matrix": [
+    [
+      "REQ-01",
+      "Course-bound persistent notes",
+      "D1 save_note; D2 C2/C6, 2.8; T4",
+      "In progress",
+      "TC-001 (planned)"
+    ],
+    [
+      "REQ-02",
+      "Bounded readable file import",
+      "D2 F2, ImportSupervisor 2.5; C3; T6",
+      "In progress",
+      "TC-002 (planned)"
+    ],
+    [
+      "REQ-03",
+      "Checked evidence and exact source opening",
+      "D1 Citation/resolve_reference; D2 C1/C4",
+      "In progress",
+      "TC-003 (planned)"
+    ],
+    [
+      "REQ-04",
+      "Manual cards and explicit acceptance",
+      "D1 accept_item; D2 C11, 2.13; T9",
+      "In progress",
+      "TC-004 (planned)"
+    ],
+    [
+      "REQ-05",
+      "Checked local-model flashcard drafts",
+      "D1 algorithm B/submit_task; C4/C5; T9",
+      "In progress",
+      "TC-005 (planned)"
+    ],
+    [
+      "REQ-06",
+      "Course-scoped exact semantic retrieval",
+      "D1 algorithm A/search_evidence; C4/C6; T8",
+      "Designed",
+      "TC-006 (planned)"
+    ],
+    [
+      "REQ-07",
+      "Evidence-bounded guides and coverage warnings",
+      "D1 algorithm B; StudyItem/Citation; C4; T9",
+      "Designed",
+      "TC-007 (planned)"
+    ],
+    [
+      "REQ-08",
+      "Background jobs, cancellation and recovery",
+      "D2 F3/JobSupervisor 2.6; C4; T5/T9",
+      "Designed",
+      "TC-008 (planned)"
+    ],
+    [
+      "REQ-09",
+      "Self-rated practice and review intervals",
+      "D2 ReviewState/ReviewEvent/rate 2.13; C11",
+      "In progress",
+      "TC-009 (planned)"
+    ],
+    [
+      "REQ-10",
+      "Immutable edits and stale-revision rejection",
+      "D1 Source revisions; D2 updateNote 2.8; T4",
+      "Designed",
+      "TC-010 (planned)"
+    ],
+    [
+      "REQ-11",
+      "Source deletion and dependent cleanup",
+      "D2 deleteSource/ManagedFileRecovery 2.8; C6; T10",
+      "In progress",
+      "TC-011 (planned)"
+    ],
+    [
+      "REQ-12",
+      "Consistent portable course export",
+      "D2 exportCourse 2.8; C6; T10",
+      "Designed",
+      "TC-012 (planned)"
+    ],
+    [
+      "REQ-13",
+      "Model consent and profile readiness",
+      "D2 AppSettings/ModelProfile 2.11; C9; T7",
+      "Designed",
+      "TC-013 (planned)"
+    ],
+    [
+      "REQ-14",
+      "Nonintrusive progress announcements",
+      "D2 StatusPresenter 2.10; C8",
+      "Designed",
+      "TC-014 (deferred)"
+    ],
+    [
+      "REQ-15",
+      "Recurring calendar (deferred)",
+      "D2 F1/ScheduleRule/saveRule 2.4; C2",
+      "Designed",
+      "TC-015 (deferred)"
+    ],
+    [
+      "REQ-16",
+      "Lecture assistance (deferred)",
+      "D2 F1/SuggestionEvidence/LectureAssistant 2.14",
+      "Designed",
+      "TC-016 (deferred)"
+    ],
+    [
+      "REQ-17",
+      "PPTX extraction (deferred)",
+      "D2 ImportSupervisor 2.5; C3",
+      "Designed",
+      "TC-017 (deferred)"
+    ],
+    [
+      "REQ-18",
+      "Trusted native bridge (deferred)",
+      "D2 BridgeGuard 2.9; C1/C7",
+      "Designed",
+      "TC-018 (deferred)"
+    ],
+    [
+      "REQ-19",
+      "Formative quiz attempts (optional)",
+      "D2 Attempt/submitAnswer 2.13; C11",
+      "Designed",
+      "TC-019 (deferred)"
+    ],
+    [
+      "NFR-01",
+      "Locality, consent and content-free logs",
+      "D2 2.7/2.11/2.12; C5/C9/C10",
+      "In progress",
+      "TC-020 (planned)"
+    ],
+    [
+      "NFR-02",
+      "No required hosted-service cost",
+      "D1 local stack sec.6; C6/C9; LICENSE",
+      "In progress",
+      "TC-021 (planned)"
+    ],
+    [
+      "NFR-03",
+      "Keyboard and spoken-label workflow",
+      "D2 2.3/2.10/2.13; C1/C8/C11; T13",
+      "Designed",
+      "TC-022 (planned)"
+    ],
+    [
+      "NFR-04",
+      "Committed-note fault recovery",
+      "D2 F2/F3/2.8; C3/C4/C6; T11/T12",
+      "In progress",
+      "TC-023 (planned)"
+    ],
+    [
+      "NFR-05",
+      "Loopback, request and text boundaries",
+      "D0 I1; D2 C7; server.py/web/app.js; T12",
+      "In progress",
+      "TC-024 (planned)"
+    ],
+    [
+      "NFR-06",
+      "Clean-account Windows setup",
+      "D2 SetupController 2.11; C9; T14",
+      "Planned",
+      "TC-025 (planned)"
+    ],
+    [
+      "NFR-07",
+      "Bounded diagnostics and graceful failure",
+      "D2 DiagnosticSink 2.12; C10; T12",
+      "Designed",
+      "TC-026 (deferred)"
+    ],
+    [
+      "NFR-08",
+      "Save latency and model deadline",
+      "D0 timing; D1 size; D2 adapter 2.7; C5/C6",
+      "Planned",
+      "TC-027 (planned)"
+    ],
+    [
+      "NFR-09",
+      "Question-quality evaluation record",
+      "D1 algorithm B; evaluation plan; T11/T15",
+      "Planned",
+      "TC-028 (planned)"
+    ],
+    [
+      "CON-01",
+      "No required paid API or hosted backend.",
+      "D1 sec.6; C5/C6/C9",
+      "Designed",
+      "TC-029 (planned)"
+    ],
+    [
+      "CON-02",
+      "One student/OS account on one device; no multi-user service.",
+      "D0 I1; D2 2.9; C1/C7",
+      "Designed",
+      "TC-030 (planned)"
+    ],
+    [
+      "CON-03",
+      "Windows first; target hardware resources are not measured yet.",
+      "D1 size; D2 2.11; C3/C5/C9",
+      "Designed",
+      "TC-031 (planned)"
+    ],
+    [
+      "CON-04",
+      "Use permitted content; retain MIT and upstream/model notices.",
+      "D2 2.11; C3/C9; Ethics/NOTICE",
+      "Designed",
+      "TC-032 (planned)"
+    ],
+    [
+      "CON-05",
+      "Sole member; 4-8 hours/week, with proposed 6-hour average.",
+      "D2 component audit; Planning T1-T15",
+      "Designed",
+      "TC-033 (planned)"
+    ]
+  ]
+}
