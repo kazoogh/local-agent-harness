@@ -25,6 +25,7 @@ Run checks with `python -m unittest discover -s tests -v`. To use a different da
 
 ## 3. Project documents
 
+- [Fall presentation draft](Presentation/README.md): Assignment 12 deck, feedback record, ten-minute outline, and recording plan; advisor review and audio test pending.
 - [Test plan](Test_Plan.md): verification/validation strategy, metrics, 44 active cases and definition of done.
 - [Project constraints essay](Constraints_Essay.md): 12 sentences across four project-specific areas.
 - [Advisor record](Advisor_Record.md): outstanding advisor agreement, spreadsheet entry and approval evidence.
